@@ -1,0 +1,320 @@
+/* -------------------------
+   RESET
+------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+/* -------------------------
+   HEADER
+------------------------- */
+
+.site-header {
+  border-bottom: 1px solid #111;
+  background: #fff;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+}
+
+.logo {
+  color: #111;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.header-icons {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.header-icons a {
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.header-icons a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------
+   NAVIGATION
+------------------------- */
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  padding: 18px 40px;
+  border-top: 1px solid #ddd;
+}
+
+.main-nav a {
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.main-nav .sale {
+  color: #d00;
+}
+
+/* -------------------------
+   HERO
+------------------------- */
+
+.hero {
+  padding: 55px 40px 35px;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 16px;
+  color: #555;
+}
+
+/* -------------------------
+   PRODUCT GRID
+------------------------- */
+
+.produktliste {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px 20px;
+  padding: 0 40px 80px;
+}
+
+/* -------------------------
+   PRODUCT CARD
+------------------------- */
+
+.card {
+  background: white;
+  padding: 0;
+}
+
+/* IMAGE */
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f1f1f1;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .product-image img {
+  transform: scale(1.04);
+}
+
+/* PRODUCT INFO */
+
+.product-info {
+  padding-top: 15px;
+}
+
+.price {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.product-info h2 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
+.brand {
+  margin: 0 0 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.category {
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
+
+.site-footer {
+  background: #111;
+  color: white;
+  padding: 60px 40px 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+.footer-grid h3 {
+  margin: 0 0 20px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.footer-grid p {
+  margin: 0;
+  max-width: 250px;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-grid a {
+  display: block;
+  width: fit-content;
+  margin-bottom: 10px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-grid a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+.footer-bottom a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* -------------------------
+   TABLET
+------------------------- */
+
+@media (max-width: 900px) {
+  .produktliste {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media (max-width: 600px) {
+  .header-top {
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .header-icons {
+    gap: 12px;
+  }
+
+  .main-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 25px;
+    padding: 15px 20px;
+  }
+
+  .main-nav a {
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 40px 20px 25px;
+  }
+
+  .produktliste {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 12px;
+    padding: 0 20px 60px;
+  }
+
+  .product-info h2 {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .site-footer {
+    padding: 45px 20px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 10px;
+  }
+}

@@ -1,11 +1,38 @@
-const undervisere = ["Anders", "Alan", "Stine", "Lau"];
+const endpoint = "https://kea-alt-del.dk/t7/api/products?limit=20";
 
-console.log(undervisere);
+const produktliste = document.querySelector(".produktliste");
 
-const section = document.querySelector("section");
+fetch(endpoint)
+  .then((res) => res.json())
+  .then(visData);
 
-undervisere.forEach(visNavne);
+function visData(json) {
+  console.log(json);
 
-function visNavne(elm, i) {
-  section.innerHTML += `<p>${elm} har index ${i}d</p>`;
+  json.forEach((element) => {
+    produktliste.innerHTML += `
+      <article class="card">
+
+        <div class="product-image">
+          <img 
+            src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp" 
+            alt="${element.productdisplayname}"
+          >
+        </div>
+
+        <div class="product-info">
+
+          <p class="price">${element.price} kr.</p>
+
+          <h2>${element.productdisplayname}</h2>
+
+          <p class="brand">${element.brandname}</p>
+
+          <p class="category">${element.category}</p>
+
+        </div>
+
+      </article>
+    `;
+  });
 }
