@@ -126,7 +126,9 @@ body {
   padding: 0;
 }
 
-/* IMAGE */
+/* -------------------------
+   PRODUCT IMAGE
+------------------------- */
 
 .product-image {
   width: 100%;
@@ -147,7 +149,9 @@ body {
   transform: scale(1.04);
 }
 
-/* PRODUCT INFO */
+/* -------------------------
+   PRODUCT INFO
+------------------------- */
 
 .product-info {
   padding-top: 15px;
@@ -176,6 +180,130 @@ body {
   margin: 0;
   font-size: 13px;
   color: #777;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* =====================================================
+   PRODUCT DETAILS
+===================================================== */
+
+/* Hele details-siden */
+
+#product {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 40px 100px;
+}
+
+/* Tilbage-knap */
+
+#backbutton {
+  margin: 25px 40px 0;
+  padding: 10px 22px;
+  border: 1px solid #111;
+  background: white;
+  color: #111;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#backbutton:hover {
+  background: #111;
+  color: white;
+}
+
+/* Selve produktkortet */
+
+#product .card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 70px;
+  align-items: start;
+  background: white;
+}
+
+/* Produktbilledet på detailsiden */
+
+#product .card > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  display: block;
+  background: #f3f3f3;
+}
+
+/* Info på højre side */
+
+#product .product-info {
+  padding-top: 20px;
+}
+
+/* Pris */
+
+#product .price {
+  order: 1;
+  margin: 0 0 25px;
+  color: #d43b3b;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Produktnavn */
+
+#product .product-info h2 {
+  margin: 0 0 18px;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+
+/* Brand */
+
+#product .brand {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Kategori */
+
+#product .category {
+  margin: 0 0 35px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Køb-knap */
+
+#product .product-info::after {
+  content: "ADD TO CART";
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 16px 20px;
+  background: #111;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* -------------------------
+   DETAILS SEPARATOR
+------------------------- */
+
+#product .product-info {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
 }
 
 /* -------------------------
@@ -223,7 +351,9 @@ body {
   text-decoration: underline;
 }
 
-/* FOOTER BOTTOM */
+/* -------------------------
+   FOOTER BOTTOM
+------------------------- */
 
 .footer-bottom {
   display: flex;
@@ -245,9 +375,9 @@ body {
   font-size: 13px;
 }
 
-/* -------------------------
+/* =====================================================
    TABLET
-------------------------- */
+===================================================== */
 
 @media (max-width: 900px) {
   .produktliste {
@@ -257,13 +387,26 @@ body {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Product details */
+
+  #product {
+    padding: 50px 30px 80px;
+  }
+
+  #product .card {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }
 
-/* -------------------------
+/* =====================================================
    MOBILE
-------------------------- */
+===================================================== */
 
 @media (max-width: 600px) {
+  /* HEADER */
+
   .header-top {
     padding: 20px;
   }
@@ -276,6 +419,8 @@ body {
     gap: 12px;
   }
 
+  /* NAVIGATION */
+
   .main-nav {
     justify-content: flex-start;
     overflow-x: auto;
@@ -287,9 +432,13 @@ body {
     white-space: nowrap;
   }
 
+  /* HERO */
+
   .hero {
     padding: 40px 20px 25px;
   }
+
+  /* PRODUCT GRID */
 
   .produktliste {
     grid-template-columns: repeat(2, 1fr);
@@ -304,6 +453,42 @@ body {
   .price {
     font-size: 16px;
   }
+
+  /* -------------------------
+     PRODUCT DETAILS MOBILE
+  ------------------------- */
+
+  #backbutton {
+    margin: 20px;
+  }
+
+  #product {
+    padding: 25px 20px 60px;
+  }
+
+  #product .card {
+    display: block;
+  }
+
+  #product .card > img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #product .product-info {
+    padding-top: 25px;
+  }
+
+  #product .product-info h2 {
+    font-size: 30px;
+    line-height: 1.05;
+  }
+
+  #product .price {
+    font-size: 20px;
+  }
+
+  /* FOOTER */
 
   .site-footer {
     padding: 45px 20px 20px;
