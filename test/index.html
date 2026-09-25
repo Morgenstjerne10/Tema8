@@ -9,11 +9,11 @@
     <title>Objekter</title>
   </head>
 
-  <body>
+  <body class="home">
     <!-- HEADER -->
     <header class="site-header">
       <div class="header-top">
-        <a href="#" class="logo">OBJEKTER</a>
+        <a href="#" class="logo">SportsGear</a>
 
         <div class="header-icons">
           <a href="#">Søg</a>
@@ -35,11 +35,18 @@
     <!-- MAIN -->
     <main>
       <section class="hero">
-        <h1>Vores produkter</h1>
-        <p>Udvalgte styles og objekter.</p>
+        <div class="hero-content">
+          <a href="#catlisteContainer" class="view-button">View</a>
+        </div>
       </section>
 
-      <section class="produktliste"></section>
+      <section id="catlisteContainer"></section>
+
+      <section class="featured-products">
+        <div id="productGrid"></div>
+      </section>
+
+      <section id="catlisteContainer"></section>
     </main>
 
     <!-- FOOTER -->
@@ -55,7 +62,6 @@
           <a href="#">Mænd</a>
           <a href="#">Kvinder</a>
           <a href="#">Børn</a>
-          <a href="#">Accessories</a>
         </div>
 
         <div>
@@ -80,6 +86,6 @@
       </div>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
